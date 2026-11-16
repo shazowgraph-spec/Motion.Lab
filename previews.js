@@ -47,13 +47,13 @@ function pvRound(ctx, x, y, w, h, r) { ctx.beginPath(); ctx.roundRect(x, y, w, h
 /* ---------- Textures Minecraft partagées par les previews ---------- */
 const PV_MC = {};
 const PV_MC_SRC = {
-  heart_full: "mc/heart_full.png", heart_container: "mc/heart_container.png",
-  heart_poisoned: "mc/heart_poisoned.png", heart_withered: "mc/heart_withered.png",
-  hotbar: "mc/hotbar.png", hotbar_sel: "mc/hotbar_selection.png",
-  xp_bg: "mc/xp_bg.png", xp_fill: "mc/xp_fill.png", crosshair: "mc/crosshair.png",
-  boss_purple_bg: "mc/boss_purple_bg.png", boss_purple_fill: "mc/boss_purple_fill.png",
-  boss_red_bg: "mc/boss_red_bg.png", boss_red_fill: "mc/boss_red_fill.png",
-  crit: "mc/particle_critical_hit.png",
+  heart_full: "heart_full.png", heart_container: "heart_container.png",
+  heart_poisoned: "heart_poisoned.png", heart_withered: "heart_withered.png",
+  hotbar: "hotbar.png", hotbar_sel: "hotbar_selection.png",
+  xp_bg: "xp_bg.png", xp_fill: "xp_fill.png", crosshair: "crosshair.png",
+  boss_purple_bg: "boss_purple_bg.png", boss_purple_fill: "boss_purple_fill.png",
+  boss_red_bg: "boss_red_bg.png", boss_red_fill: "boss_red_fill.png",
+  crit: "particle_critical_hit.png",
 };
 for (const [k, src] of Object.entries(PV_MC_SRC)) {
   const im = new Image(); im.src = src; PV_MC[k] = im;

@@ -25,15 +25,15 @@ const VW = 1280, VH = 720;
 /* ---------- Textures Minecraft (HUD réel du jeu) ---------- */
 const MC_IMG = {};
 const MC_SRC = {
-  heart_full: "mc/heart_full.png", heart_half: "mc/heart_half.png", heart_container: "mc/heart_container.png",
-  heart_poisoned: "mc/heart_poisoned.png", heart_withered: "mc/heart_withered.png",
-  hotbar: "mc/hotbar.png", hotbar_sel: "mc/hotbar_selection.png",
-  xp_bg: "mc/xp_bg.png", xp_fill: "mc/xp_fill.png", crosshair: "mc/crosshair.png",
-  boss_purple_bg: "mc/boss_purple_bg.png", boss_purple_fill: "mc/boss_purple_fill.png",
-  boss_red_bg: "mc/boss_red_bg.png", boss_red_fill: "mc/boss_red_fill.png",
-  crit: "mc/particle_critical_hit.png", pheart: "mc/particle_heart.png", flame: "mc/particle_flame.png",
-  sword: "mc/item_diamond_sword.png", nsword: "mc/item_netherite_sword.png",
-  gapple: "mc/item_golden_apple.png", bow: "mc/item_bow.png", potion: "mc/item_potion.png", diamond: "mc/item_diamond.png",
+  heart_full: "heart_full.png", heart_half: "heart_half.png", heart_container: "heart_container.png",
+  heart_poisoned: "heart_poisoned.png", heart_withered: "heart_withered.png",
+  hotbar: "hotbar.png", hotbar_sel: "hotbar_selection.png",
+  xp_bg: "xp_bg.png", xp_fill: "xp_fill.png", crosshair: "crosshair.png",
+  boss_purple_bg: "boss_purple_bg.png", boss_purple_fill: "boss_purple_fill.png",
+  boss_red_bg: "boss_red_bg.png", boss_red_fill: "boss_red_fill.png",
+  crit: "particle_critical_hit.png", pheart: "particle_heart.png", flame: "particle_flame.png",
+  sword: "item_diamond_sword.png", nsword: "item_netherite_sword.png",
+  gapple: "item_golden_apple.png", bow: "item_bow.png", potion: "item_potion.png", diamond: "item_diamond.png",
 };
 for (const [k, src] of Object.entries(MC_SRC)) {
   const im = new Image(); im.src = src; MC_IMG[k] = im;
