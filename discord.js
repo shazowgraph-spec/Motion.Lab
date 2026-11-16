@@ -16,8 +16,8 @@
 "use strict";
 
 const DISCORD_CONFIG = {
-  CLIENT_ID: "",                                    // ← ton Client ID ici
-  GUILD_INVITE: "https://discord.gg/motionlab",     // ← ton invitation ici
+  CLIENT_ID: "1571928334428930161",
+  GUILD_INVITE: "https://discord.gg/h5HkpJRtyP",
   SCOPES: "identify",
 };
 
