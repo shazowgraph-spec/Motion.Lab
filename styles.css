@@ -93,6 +93,66 @@ body::before { /* texture de bruit subtile */
 .dc-welcome.show { opacity: 1; translate: -50% 0; }
 .dc-welcome b { color: var(--green); }
 
+/* Carte « rejoins le serveur » après connexion */
+.dc-join {
+  position: fixed; inset: 0; z-index: 10000;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(5, 5, 12, .72); backdrop-filter: blur(6px);
+  opacity: 0; transition: opacity .3s;
+}
+.dc-join.show { opacity: 1; }
+.dc-join-card {
+  background: var(--card-2); border: 1px solid var(--line-2);
+  border-radius: 20px; padding: 36px 40px 28px; text-align: center;
+  max-width: 400px; margin: 20px; box-shadow: 0 30px 80px rgba(0, 0, 0, .6);
+  transform: translateY(14px) scale(.96);
+  transition: transform .35s cubic-bezier(.2, 1.4, .4, 1);
+}
+.dc-join.show .dc-join-card { transform: none; }
+.dc-join-logo { width: 44px; height: 44px; object-fit: contain; margin-bottom: 12px; }
+.dc-join-card h3 { font: 800 22px Sora, sans-serif; color: var(--text); margin: 0 0 8px; }
+.dc-join-card p { color: var(--faint); font-size: 14px; line-height: 1.5; margin: 0 0 20px; }
+.dc-join-btn {
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  background: #5865f2; color: #fff; text-decoration: none;
+  font: 700 15px Inter, sans-serif; padding: 13px 22px; border-radius: 12px;
+  transition: filter .2s, translate .2s;
+}
+.dc-join-btn:hover { filter: brightness(1.12); translate: 0 -1px; }
+.dc-join-btn .dc-logo { filter: brightness(0) invert(1); }
+.dc-join-later {
+  margin-top: 14px; background: none; border: 0; cursor: pointer;
+  color: var(--faint); font: 500 13px Inter, sans-serif; text-decoration: underline;
+}
+.dc-join-later:hover { color: var(--text); }
+
+/* Étapes 1-2 de la modale d'accès */
+.dg-step {
+  display: flex; align-items: center; gap: 12px; text-align: left;
+  padding: 12px 14px; border: 1px solid var(--line-2); border-radius: 12px;
+  margin-bottom: 10px; background: rgba(255, 255, 255, .02);
+}
+.dg-step.dg-ok { border-color: rgba(52, 230, 168, .4); }
+.dg-num {
+  flex: 0 0 26px; width: 26px; height: 26px; border-radius: 50%;
+  display: grid; place-items: center;
+  background: var(--purple); color: #fff; font: 700 13px Inter, sans-serif;
+}
+.dg-step.dg-ok .dg-num { background: var(--green); color: #062018; }
+.dg-label { flex: 1; color: var(--text); font-size: 14px; }
+.dg-label b { color: var(--green); }
+.dg-step .dc-join-btn { padding: 9px 16px; font-size: 13px; border-radius: 10px; }
+.dg-et { color: var(--faint); font-style: italic; }
+.dg-msg { color: #ffb38a; font-size: 12.5px; line-height: 1.45; min-height: 0; margin: 0 0 10px; text-align: center; }
+.dg-check {
+  width: 100%; background: var(--card); border: 1px solid var(--line-2);
+  color: var(--text); font: 600 13.5px Inter, sans-serif;
+  padding: 11px; border-radius: 10px; cursor: pointer; margin-top: 4px;
+  transition: border-color .2s, color .2s;
+}
+.dg-check:hover { border-color: var(--purple); color: #fff; }
+.dg-check:disabled { opacity: .6; cursor: wait; }
+
 /* ── Tarifs gratuit (plan unique) ── */
 .pricing-free { grid-template-columns: minmax(0, 520px); justify-content: center; }
 .plan-free .pop-badge { background: var(--green); color: #062018; }

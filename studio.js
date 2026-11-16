@@ -1622,9 +1622,10 @@ function setStatus(msg, cls = "") { statusEl.textContent = msg; statusEl.classNa
 
 async function exportCurrent() {
   if (exporting) return;
-  // Condition d'accès : compte Discord relié (quand l'app Discord est configurée)
-  if (window.MLAuth && MLAuth.configured() && !MLAuth.user()) {
-    setStatus("🔐 Connecte ton Discord pour exporter (bouton en haut à droite).", "error");
+  // Condition d'accès : connecté à Discord ET membre du serveur
+  if (window.MLAuth && MLAuth.configured() && !MLAuth.canExport()) {
+    setStatus("🔐 Connexion + serveur requis pour exporter.", "error");
+    MLAuth.showGate(() => exportCurrent());
     return;
   }
   if (!("VideoEncoder" in window)) { setStatus("WebCodecs non disponible — utilise Chrome ou Edge.", "error"); return; }

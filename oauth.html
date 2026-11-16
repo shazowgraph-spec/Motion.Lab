@@ -24,7 +24,7 @@
   </div>
 <script src="discord.js"></script>
 <script>
-  // Le token arrive dans le #fragment (flux implicite) → on le consomme ici.
+  // Le code OAuth2 arrive en ?code=… → échangé contre un token via PKCE.
   if (!MLAuth.saveFromHash()) {
     document.querySelector("p").textContent = "Connexion annulée ou expirée.";
   }
