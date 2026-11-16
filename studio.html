@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Studio — MOTIONLAB</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="studio.css">
+<link rel="icon" type="image/svg+xml" href="logo.svg">
+</head>
+<body class="studio-page">
+
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<header class="nav scrolled">
+  <div class="nav-inner">
+    <a class="logo" href="index.html">
+      <img src="logo.png" alt="MOTIONLAB" class="logo-img" width="780" height="564">
+      MOTION<span>LAB</span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html">Accueil</a>
+      <a href="index.html#bibliotheque">Bibliothèque</a>
+      <a href="index.html#tarifs">Tarifs</a>
+      <a href="studio.html" class="active">Studio</a>
+    </nav>
+    <div class="studio-credit" id="studioAuth">
+      <a href="#" class="discord-login">Se connecter avec Discord</a>
+    </div>
+  </div>
+</header>
+
+<main class="studio">
+
+  <!-- ====== Colonne gauche : presets ====== -->
+  <aside class="s-col s-presets">
+    <div class="s-col-head">
+      <h3>Presets</h3>
+      <input type="search" id="presetSearch" placeholder="Filtrer…" autocomplete="off">
+    </div>
+    <div class="s-chips" id="sChips">
+      <button class="chip active" data-cat="all">Tout</button>
+      <button class="chip" data-cat="texte">Texte</button>
+      <button class="chip" data-cat="element">Éléments</button>
+      <button class="chip" data-cat="transition">Transitions</button>
+      <button class="chip" data-cat="social">Social</button>
+      <button class="chip" data-cat="overlay">Overlay</button>
+      <button class="chip" data-cat="minecraft">Minecraft</button>
+    </div>
+    <div class="s-list" id="presetList"><!-- rendu JS --></div>
+  </aside>
+
+  <!-- ====== Colonne centre : scène ====== -->
+  <section class="s-col s-stage">
+    <div class="stage-head">
+      <div>
+        <h2 id="stageTitle">—</h2>
+        <p id="stageMeta">—</p>
+      </div>
+      <span class="stage-res" id="stageRes">1280×720 · 30 fps</span>
+    </div>
+    <div class="stage-wrap">
+      <canvas id="stage" width="1920" height="1080"></canvas>
+      <div class="stage-grid-lines" aria-hidden="true"></div>
+    </div>
+    <div class="stage-actions">
+      <button class="btn btn-sm" id="playBtn">⏸ Pause</button>
+      <div class="playhead">
+        <div class="ph-track"><i id="phFill"></i></div>
+        <span id="phTime">0.0 / 4.0 s</span>
+      </div>
+      <select id="resSelect" class="btn btn-sm res-select">
+        <option value="720p30" selected>720p · 30 fps · léger</option>
+        <option value="1080p30">1080p · 30 fps</option>
+        <option value="1080p60">1080p · 60 fps</option>
+        <option value="4k60">4K · 60 fps · lourd</option>
+      </select>
+      <button class="btn btn-primary" id="exportBtn">⬇ Exporter en MP4</button>
+    </div>
+    <div class="stage-status" id="status">Prêt.</div>
+    <div class="stage-hint">💡 Astuce : si le téléchargement ne démarre pas dans l'aperçu, choisis « 720p · léger » ou ouvre cette page dans Chrome.</div>
+  </section>
+
+  <!-- ====== Colonne droite : réglages ====== -->
+  <aside class="s-col s-controls">
+    <div class="s-col-head"><h3>Réglages</h3><button class="btn btn-sm" id="resetBtn" title="Réinitialiser">↺</button></div>
+    <div class="controls-body" id="controls"><!-- généré JS --></div>
+  </aside>
+</main>
+
+<script src="./mp4-muxer.min.js"></script>
+<script src="discord.js"></script>
+<script src="studio.js"></script>
+</body>
+</html>

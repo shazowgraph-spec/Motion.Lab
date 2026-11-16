@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Connexion… — MOTIONLAB</title>
+<link rel="icon" type="image/svg+xml" href="logo.svg">
+<style>
+  body { background:#07070d; color:#f1f1fa; font-family:Inter,system-ui,sans-serif;
+         display:grid; place-items:center; height:100vh; margin:0; }
+  .box { text-align:center; }
+  .spin { width:44px; height:44px; border-radius:50%; margin:0 auto 18px;
+          border:3px solid rgba(123,90,255,.25); border-top-color:#7b5aff;
+          animation:s .8s linear infinite; }
+  @keyframes s { to { transform:rotate(360deg); } }
+  p { color:#9c9cba; }
+  a { color:#7b5aff; }
+</style>
+</head>
+<body>
+  <div class="box">
+    <div class="spin"></div>
+    <p>Connexion à MOTIONLAB via Discord…</p>
+    <p><a href="index.html">← Retour au site</a></p>
+  </div>
+<script src="discord.js"></script>
+<script>
+  // Le token arrive dans le #fragment (flux implicite) → on le consomme ici.
+  if (!MLAuth.saveFromHash()) {
+    document.querySelector("p").textContent = "Connexion annulée ou expirée.";
+  }
+</script>
+</body>
+</html>

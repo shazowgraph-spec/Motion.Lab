@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MOTIONLAB — Bibliothèque d'animations pour le montage</title>
+<meta name="description" content="Des centaines d'animations prêtes pour vos montages YouTube, Shorts et TikTok. Texte, transitions, éléments, overlays — exportez en MP4 en un clic.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/png" href="logo.png">
+</head>
+<body>
+
+<!-- Curseur personnalisé -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- Barre de progression de lecture -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- ================= NAV ================= -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="logo" href="#accueil">
+      <img src="logo.png" alt="MOTIONLAB" class="logo-img" width="780" height="564">
+      MOTION<span>LAB</span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#fonctionnalites">Fonctionnalités</a>
+      <a href="#bibliotheque">Bibliothèque</a>
+      <a href="studio.html">Studio</a>
+      <a href="#tarifs">Tarifs</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn btn-ghost btn-sm discord-login" href="#">Se connecter</a>
+      <a class="btn btn-primary btn-sm magnetic" href="studio.html">Ouvrir le studio</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="accueil">
+  <div class="hero-bg">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <div class="hero-grid"></div>
+  </div>
+
+  <div class="hero-inner">
+    <div class="hero-copy reveal">
+      <div class="badge">✨ Nouveau — 12 presets 4K ajoutés cette semaine</div>
+      <h1>Des animations <span class="gradient-text">prêtes à l'emploi</span><br>
+      pour <span class="rotator" id="rotator"><span>tes montages</span></span></h1>
+      <p class="hero-sub">Texte animé, transitions, éléments et overlays conçus pour les créateurs.
+      Prévisualise, personnalise, <strong>exporte en MP4</strong> — sans After Effects.</p>
+      <div class="hero-cta">
+        <a href="studio.html" class="btn btn-primary btn-lg magnetic">Ouvrir le studio <span class="arrow">→</span></a>
+        <a href="#process" class="btn btn-ghost btn-lg magnetic">Voir comment ça marche</a>
+      </div>
+      <div class="hero-proof">
+        <div class="avatars"><span></span><span></span><span></span><span></span></div>
+        <div><strong>+2 400 créateurs</strong> utilisent déjà MOTIONLAB</div>
+      </div>
+    </div>
+
+    <div class="hero-visual reveal delay-2" id="heroVisual">
+      <div class="float-card fc-1 tilt">
+        <div class="ph ph-anim"><canvas class="pv" data-pv="Titre Chroma"></canvas></div>
+        <div class="fc-meta">Titre chroma · 4 s · MP4</div>
+      </div>
+      <div class="float-card fc-2 tilt">
+        <div class="ph ph-anim"><canvas class="pv" data-pv="Compteur de Vues"></canvas></div>
+        <div class="fc-meta">Vues +320 % · 4 s · MP4</div>
+      </div>
+      <div class="float-card fc-3 tilt">
+        <div class="ph ph-anim"><canvas class="pv" data-pv="Zoom Punch"></canvas></div>
+        <div class="fc-meta">Transition zoom · 1 s · MP4</div>
+      </div>
+      <div class="timeline-chip">
+        <div class="tc-track"><i class="tc-clip c1"></i><i class="tc-clip c2"></i><i class="tc-clip c3"></i></div>
+        <div class="tc-head"></div>
+      </div>
+    </div>
+  </div>
+
+  <a class="scroll-hint" href="#fonctionnalites"><span></span></a>
+</section>
+
+<!-- ================= MARQUEE ================= -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>TEXTES ANIMÉS</span><i>✦</i><span>TRANSITIONS</span><i>✦</i><span>SUBSCRIBE</span><i>✦</i>
+    <span>COMPTEURS</span><i>✦</i><span>LOWER THIRDS</span><i>✦</i><span>OVERLAYS</span><i>✦</i>
+    <span>EMOJI POP</span><i>✦</i><span>ZOOM PUNCH</span><i>✦</i>
+    <span>TEXTES ANIMÉS</span><i>✦</i><span>TRANSITIONS</span><i>✦</i><span>SUBSCRIBE</span><i>✦</i>
+    <span>COMPTEURS</span><i>✦</i><span>LOWER THIRDS</span><i>✦</i><span>OVERLAYS</span><i>✦</i>
+    <span>EMOJI POP</span><i>✦</i><span>ZOOM PUNCH</span><i>✦</i>
+  </div>
+</div>
+
+<!-- ================= FONCTIONNALITÉS ================= -->
+<section class="section" id="fonctionnalites">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="kicker">Pourquoi MOTIONLAB</div>
+      <h2>Tout ce qu'il faut pour <span class="gradient-text">monter plus vite</span></h2>
+      <p>Conçu pour les monteurs YouTube : moins de temps sur After Effects, plus de temps à créer.</p>
+    </div>
+    <div class="feature-grid">
+      <article class="feature-card reveal tilt">
+        <div class="f-icon" style="--hue:262"><svg viewBox="0 0 24 24" width="24" height="24"><path d="M13 2 5.5 13.5H11L9.5 22 18 10h-5.5L13 2Z" fill="currentColor"/></svg></div>
+        <h3>Export MP4 instantané</h3>
+        <p>Chaque preset se rend en 4K 60 fps directement dans ton navigateur. Pas de render farm, pas d'attente.</p>
+      </article>
+      <article class="feature-card reveal tilt delay-1">
+        <div class="f-icon" style="--hue:190"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/><circle cx="9" cy="7" r="2.2" fill="var(--card)" /><circle cx="15" cy="12" r="2.2" fill="var(--card)"/><circle cx="7" cy="17" r="2.2" fill="var(--card)"/></svg></div>
+        <h3>Personnalisable</h3>
+        <p>Change le texte, les couleurs, la durée et la vitesse. L'animation s'adapte automatiquement.</p>
+      </article>
+      <article class="feature-card reveal tilt delay-2">
+        <div class="f-icon" style="--hue:330"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></div>
+        <h3>Rythme de lecture</h3>
+        <p>Les presets texte calent leur durée sur le temps de lecture réel — parfait pour les voice-overs.</p>
+      </article>
+      <article class="feature-card reveal tilt delay-1">
+        <div class="f-icon" style="--hue:145"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><path d="M16.5 13.5v6M13.5 16.5h6"/></svg></div>
+        <h3>Prêt pour le montage</h3>
+        <p>Fond transparent simulé, framerates standards, fichiers nommés et rangés pour ta timeline.</p>
+      </article>
+      <article class="feature-card reveal tilt delay-2">
+        <div class="f-icon" style="--hue:45"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg></div>
+        <h3>Recherche instantanée</h3>
+        <p>Trouve le bon preset en tapant trois lettres. Filtre par catégorie, durée et style.</p>
+      </article>
+      <article class="feature-card reveal tilt delay-3">
+        <div class="f-icon" style="--hue:220"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 5 6v5c0 4.5 3 8.5 7 10 4-1.5 7-5.5 7-10V6l-7-3Z"/><path d="m9 12 2 2 4-4"/></svg></div>
+        <h3>Libre pour usage commercial</h3>
+        <p>Utilise tes exports dans tes vidéos, tes pubs, tes clients. Aucune attribution requise.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BIBLIOTHÈQUE ================= -->
+<section class="section" id="bibliotheque">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="kicker">La bibliothèque</div>
+      <h2><span class="gradient-text">120+ presets</span> — et ça grandit chaque semaine</h2>
+      <p>Clique sur un preset pour voir l'aperçu. Les lecteurs animés arrivent dans la prochaine étape du projet.</p>
+    </div>
+
+    <div class="lib-toolbar reveal">
+      <div class="search-box">
+        <span class="s-icon">🔍</span>
+        <input type="search" id="search" placeholder="Rechercher un preset… (ex. « zoom », « subscribe »)" autocomplete="off">
+      </div>
+      <div class="chips" id="chips">
+        <button class="chip active" data-cat="all">Tout</button>
+        <button class="chip" data-cat="texte">Texte</button>
+        <button class="chip" data-cat="transition">Transitions</button>
+        <button class="chip" data-cat="element">Éléments</button>
+        <button class="chip" data-cat="overlay">Overlays</button>
+        <button class="chip" data-cat="social">Social</button>
+      <button class="chip" data-cat="mc">Minecraft</button>
+      </div>
+    </div>
+
+    <div class="lib-grid" id="libGrid"><!-- rendu par JS --></div>
+    <p class="lib-empty" id="libEmpty" hidden>Aucun preset ne correspond — essaie un autre mot-clé 🙏</p>
+  </div>
+</section>
+
+<!-- ================= STATS ================= -->
+<section class="section stats-band">
+  <div class="container stats-grid">
+    <div class="stat reveal"><div class="stat-num" data-count="120" data-suffix="+">0</div><div class="stat-label">presets dans la bibliothèque</div></div>
+    <div class="stat reveal delay-1"><div class="stat-num" data-count="2400" data-suffix="+">0</div><div class="stat-label">créateurs actifs</div></div>
+    <div class="stat reveal delay-2"><div class="stat-num" data-count="98" data-suffix="%">0</div><div class="stat-label">satisfaits du rendu 4K</div></div>
+    <div class="stat reveal delay-3"><div class="stat-num" data-count="15" data-suffix=" min">0</div><div class="stat-label">gagnées par montage</div></div>
+  </div>
+</section>
+
+<!-- ================= PROCESS ================= -->
+<section class="section" id="process">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="kicker">Le process</div>
+      <h2>De l'idée au <span class="gradient-text">fichier MP4</span> en 3 étapes</h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="step-num">01</div>
+        <h3>Choisis un preset</h3>
+        <p>Parcoures la bibliothèque, filtre par catégorie, prévisualise le style. Chaque fiche indique la durée et la résolution.</p>
+      </div>
+      <div class="step reveal delay-1"><div class="step-num">02</div>
+        <h3>Personnalise</h3>
+        <p>Ton texte, tes couleurs, ta vitesse. L'aperçu se met à jour en direct — ce que tu vois est ce que tu exportes.</p>
+      </div>
+      <div class="step reveal delay-2"><div class="step-num">03</div>
+        <h3>Exporte en MP4</h3>
+        <p>Un clic : le fichier H.264 4K se télécharge, prêt à glisser dans Premiere, CapCut ou DaVinci.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TARIFS ================= -->
+<section class="section" id="tarifs">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="kicker">Tarifs</div>
+      <h2>Tout est <span class="gradient-text">gratuit</span>. Pour toujours.</h2>
+      <p>Une seule condition : relie ton compte Discord à MOTIONLAB. Ça nous permet de t'envoyer les nouveaux presets, les news et le support directement sur le serveur.</p>
+    </div>
+    <div class="pricing pricing-free">
+      <div class="plan plan-popular plan-free reveal tilt">
+        <div class="pop-badge">⭐ Le seul plan — 0 € à vie</div>
+        <div class="plan-name">MOTIONLAB Complet</div>
+        <div class="plan-price">0€<span>/pour toujours</span></div>
+        <ul class="plan-list">
+          <li>✔ Tous les presets, sans exception</li>
+          <li>✔ Export 4K 60 fps illimité</li>
+          <li>✔ Personnalisation complète</li>
+          <li>✔ Presets Minecraft (HUD &amp; textures réelles)</li>
+          <li>✔ Nouveautés chaque semaine via Discord</li>
+          <li>✔ Usage commercial inclus</li>
+        </ul>
+        <button class="btn btn-discord btn-block magnetic" id="discordCta">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M20.3 4.4A19.6 19.6 0 0 0 15.6 3l-.3.7a13.4 13.4 0 0 1 4 1.7 13.6 13.6 0 0 0-11.6-.4l-.4.4a13.4 13.4 0 0 1 4-1.7L11 3a19.6 19.6 0 0 0-4.7 1.4C3.9 8.1 3.2 11.7 3.5 15.2a19.9 19.9 0 0 0 6 3l.5-.8a12.5 12.5 0 0 1-2-.9l.5-.4a14.2 14.2 0 0 0 12.2 0l.5.4c-.7.4-1.4.7-2.1.9l.5.8a19.8 19.8 0 0 0 6-3c.4-4-.6-7.5-2.3-10.8ZM9.7 13.6c-1.1 0-2-1-2-2.3s.9-2.3 2-2.3 2 1 2 2.3-.9 2.3-2 2.3Zm4.6 0c-1.1 0-2-1-2-2.3s.9-2.3 2-2.3 2 1 2 2.3-.9 2.3-2 2.3Z"/></svg>
+          <span id="discordCtaLabel">Se connecter avec Discord</span>
+        </button>
+        <p class="plan-note">En te connectant, tu rejoins le serveur MOTIONLAB : news, presets en avant-première et entraide montage. Aucun paiement, jamais.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="section" id="faq">
+  <div class="container container-narrow">
+    <div class="section-head reveal">
+      <div class="kicker">FAQ</div>
+      <h2>Questions <span class="gradient-text">fréquentes</span></h2>
+    </div>
+    <div class="accordion" id="accordion">
+      <details class="acc reveal">
+        <summary>Les presets sont-ils compatibles avec mon logiciel de montage ? <span class="acc-icon">+</span></summary>
+        <div class="acc-body"><p>Oui. Les exports sont des fichiers MP4 (H.264) standard : Premiere Pro, DaVinci Resolve, CapCut, Final Cut, After Effects… tout ce qui accepte du MP4.</p></div>
+      </details>
+      <details class="acc reveal delay-1">
+        <summary>Quelle qualité d'export puis-je obtenir ? <span class="acc-icon">+</span></summary>
+        <div class="acc-body"><p>Jusqu'en 4K (3840×2160) à 60 fps, encodé H.264 High Profile. Le rendu se fait dans ton navigateur : un PC correct suffit.</p></div>
+      </details>
+      <details class="acc reveal delay-2">
+        <summary>Puis-je utiliser les exports commercialement ? <span class="acc-icon">+</span></summary>
+        <div class="acc-body"><p>Absolument — vidéos YouTube, Shorts, publicités, projets clients. Aucune attribution nécessaire, même avec le plan gratuit.</p></div>
+      </details>
+      <details class="acc reveal delay-3">
+        <summary>Faut-il internet pour exporter ? <span class="acc-icon">+</span></summary>
+        <div class="acc-body"><p>Une seule fois pour charger le site. Ensuite le rendu est 100 % local : rien n'est envoyé sur un serveur.</p></div>
+      </details>
+      <details class="acc reveal delay-3">
+        <summary>De nouveaux presets arrivent-ils régulièrement ? <span class="acc-icon">+</span></summary>
+        <div class="acc-body"><p>Oui, chaque semaine. Les membres du serveur Discord MOTIONLAB les reçoivent en avant-première, avec les notes de version.</p></div>
+      </details>
+      <details class="acc reveal delay-3">
+        <summary>Pourquoi demander une connexion Discord si c'est gratuit ? <span class="acc-icon">+</span></summary>
+        <div class="acc-body"><p>Parce qu'il n'y a aucun paiement à gérer : la connexion Discord sert de compte, et le serveur sert de canal pour les news, les nouveaux presets et l'entraide montage. C'est tout.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section class="section">
+  <div class="container">
+    <div class="cta-banner reveal">
+      <div class="cta-blob"></div>
+      <h2>Prêt à <span class="gradient-text">accélérer</span> tes montages ?</h2>
+      <p>Rejoins +2 400 créateurs qui ne touchent plus à After Effects pour leurs intros.</p>
+      <a href="#bibliotheque" class="btn btn-light btn-lg magnetic">Explorer gratuitement <span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="container footer-grid">
+    <div>
+      <a class="logo" href="#accueil">
+      <img src="logo.png" alt="MOTIONLAB" class="logo-img" width="780" height="564">
+      MOTION<span>LAB</span>
+    </a>
+      <p class="foot-desc">La bibliothèque d'animations des créateurs qui veulent monter vite — et bien.</p>
+    </div>
+    <div><h4>Produit</h4><a href="#bibliotheque">Bibliothèque</a><a href="#tarifs">Tarifs</a><a href="#fonctionnalites">Fonctionnalités</a></div>
+    <div><h4>Ressources</h4><a href="#process">Comment ça marche</a><a href="#faq">FAQ</a><a href="#accueil">Nouveautés</a></div>
+    <div><h4>Légal</h4><a href="#accueil">CGU</a><a href="#accueil">Confidentialité</a><a href="#accueil">Licences</a></div>
+  </div>
+  <div class="foot-bottom container">© 2026 MOTIONLAB — Fait avec ❤ pour les monteurs</div>
+</footer>
+
+<!-- ================= MODAL APERÇU ================= -->
+<div class="modal" id="modal" aria-hidden="true">
+  <div class="modal-backdrop" id="modalBackdrop"></div>
+  <div class="modal-card" role="dialog" aria-modal="true">
+    <button class="modal-close" id="modalClose" aria-label="Fermer">✕</button>
+    <div class="modal-player" id="modalPlayer"><!-- placeholder animé --></div>
+    <div class="modal-info">
+      <div>
+        <h3 id="modalTitle">Preset</h3>
+        <p id="modalMeta">4 s · 4K 60 fps · MP4</p>
+      </div>
+      <a class="btn btn-primary" id="modalStudio" href="studio.html">Ouvrir dans le studio →</a>
+    </div>
+    <div class="modal-note">🚧 Le lecteur animé et l'export sont la <strong>prochaine étape</strong> du projet — la structure est déjà prête à les accueillir.</div>
+  </div>
+</div>
+
+<button class="to-top" id="toTop" aria-label="Remonter">
+  <svg viewBox="0 0 36 36"><circle class="tt-bg" cx="18" cy="18" r="16"/><circle class="tt-ring" id="ttRing" cx="18" cy="18" r="16"/></svg>
+  <span>↑</span>
+</button>
+
+<script src="previews.js"></script>
+<script src="discord.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
